@@ -54,6 +54,7 @@
             width: 100%;
             height: 100vh;
             height: 100dvh;
+            min-height: 700px;
             overflow: hidden;
             background-color: #f5f0eb;
         }
@@ -535,20 +536,20 @@
             font-size: 28px;
             text-align: center;
             color: #555;
-            margin-bottom: 40px;
+            margin-bottom: 10px;
             border-bottom: 1px solid #eee;
             display: inline-block;
             width: 100%;
             padding-bottom: 15px;
         }
-        .rsvp-intro {
+        .rsvp-deadline {
             font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 300;
-            color: #555;
+            color: #777;
             text-align: center;
             margin-bottom: 30px;
-            line-height: 1.6;
+            letter-spacing: 0.5px;
         }
         .form-group { margin-bottom: 25px; }
         .form-group label {
@@ -620,15 +621,6 @@
             width: auto;
             margin: 0;
             accent-color: #1a1a1a;
-        }
-        .deadline-note {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 300;
-            color: #888;
-            text-align: center;
-            margin-top: 10px;
-            letter-spacing: 0.5px;
         }
         .submit-btn {
             display: block;
@@ -860,8 +852,7 @@
         <div class="rsvp-container">
             <h2 class="rsvp-title">Анкета гостя</h2>
             <div class="rsvp-subtitle">Please RSVP</div>
-            
-                <div class="deadline-note">Пожалуйста, заполните анкету до 25.07.2026</div>
+            <div class="rsvp-deadline">Подтвердите присутствие до 25.07.2026</div>
             
             <form id="guestForm">
                 <div class="form-group">
@@ -871,8 +862,8 @@
                 <div class="form-group">
                     <label>Будете ли Вы присутствовать?</label>
                     <div class="radio-group-vertical">
-                        <label><input type="radio" name="attendance" value="yes" required> Да, буду</label>
-                        <label><input type="radio" name="attendance" value="no"> Нет, не смогу</label>
+                        <label><input type="radio" name="attendance" value="yes" required> Да, с радостью приду!</label>
+                        <label><input type="radio" name="attendance" value="no"> К сожалению, не смогу</label>
                     </div>
                 </div>
                 <div class="form-group">
@@ -883,6 +874,7 @@
                         <label><input type="checkbox" name="drink" value="водка"> Водка</label>
                         <label><input type="checkbox" name="drink" value="коньяк"> Коньяк</label>
                         <label><input type="checkbox" name="drink" value="виски"> Виски</label>
+                        <label><input type="checkbox" name="drink" value="коктейль"> Коктейль</label>
                         <label><input type="checkbox" name="drink" value="безалкогольное"> Безалкогольные</label>
                     </div>
                 </div>
