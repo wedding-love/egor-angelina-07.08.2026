@@ -60,6 +60,11 @@
             overflow: hidden;
             background-color: #f5f0eb;
             z-index: 100;
+            pointer-events: none; /* чтобы клики проходили сквозь */
+        }
+
+        .first-screen .clickable {
+            pointer-events: auto; /* кнопка должна быть кликабельной */
         }
 
         .photo-bg {
@@ -176,16 +181,17 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             transition: background 0.2s ease, transform 0.2s ease;
             border: none;
+            pointer-events: auto;
         }
         .scroll-down:hover { background: white; transform: translateX(-50%) scale(1.02); box-shadow: 0 6px 16px rgba(0,0,0,0.2); }
         .arrow-icon-svg { margin-left: 8px; width: 11px; height: 11px; stroke: #1a1a1a; }
 
-        /* ----- ОСТАЛЬНОЙ КОНТЕНТ — С ОТСТУПОМ СВЕРХУ ----- */
+        /* ----- ОСТАЛЬНОЙ КОНТЕНТ — НАЧИНАЕТСЯ СРАЗУ ПОД ПЕРВЫМ ЭКРАНОМ ----- */
         .content-wrapper {
-            margin-top: 100vh;
             position: relative;
             z-index: 1;
             background: #ffffff;
+            margin-top: 100vh;
         }
 
         .second-screen { width: 100%; background: #fff; padding: 60px 20px; }
