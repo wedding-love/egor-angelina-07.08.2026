@@ -49,13 +49,17 @@
             background-color: #ffffff;
         }
 
+        /* ----- ПЕРВЫЙ ЭКРАН — ФИКСИРОВАННЫЙ ----- */
         .first-screen {
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100vh;
             height: 100dvh;
             overflow: hidden;
             background-color: #f5f0eb;
+            z-index: 100;
         }
 
         .photo-bg {
@@ -74,6 +78,7 @@
         }
 
         .photo-bg.visible { opacity: 1; }
+        
         .soft-veil {
             position: absolute;
             top: 0;
@@ -174,6 +179,14 @@
         }
         .scroll-down:hover { background: white; transform: translateX(-50%) scale(1.02); box-shadow: 0 6px 16px rgba(0,0,0,0.2); }
         .arrow-icon-svg { margin-left: 8px; width: 11px; height: 11px; stroke: #1a1a1a; }
+
+        /* ----- ОСТАЛЬНОЙ КОНТЕНТ — С ОТСТУПОМ СВЕРХУ ----- */
+        .content-wrapper {
+            margin-top: 100vh;
+            position: relative;
+            z-index: 1;
+            background: #ffffff;
+        }
 
         .second-screen { width: 100%; background: #fff; padding: 60px 20px; }
         .invitation-container { text-align: center; max-width: 400px; margin: 0 auto; }
@@ -351,7 +364,6 @@
         .timeline-item .time { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; margin-bottom: 6px; }
         .timeline-item .timeline-desc { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 400; color: #333; max-width: 300px; margin: 0 auto; }
 
-        /* ДРЕСС-КОД — анимация снизу вверх при видимости */
         .dresscode-screen {
             background: #fff;
             padding: 40px 16px 60px;
@@ -388,7 +400,6 @@
             margin: 0 auto 30px;
         }
 
-        /* ТОНКАЯ ВЕРТИКАЛЬНАЯ ЧЕРНАЯ ЛИНИЯ МЕЖДУ БЛОКАМИ */
         .divider-line {
             width: 1px;
             height: 60px;
@@ -397,7 +408,6 @@
             opacity: 0.4;
         }
 
-        /* ФИНАЛЬНЫЙ БЛОК — анимация снизу вверх при видимости */
         .final-block {
             background: #fff;
             padding: 40px 20px 60px;
@@ -484,7 +494,6 @@
             background-color: #f5f0eb;
         }
 
-        /* АНКЕТА ГОСТЯ */
         .rsvp-screen {
             background: #ffffff;
             padding: 60px 20px;
@@ -629,7 +638,6 @@
             display: none;
         }
 
-        /* КОНТАКТЫ */
         .contacts-screen {
             background: #ffffff;
             padding: 60px 20px 80px;
@@ -733,7 +741,7 @@
 </head>
 <body>
 
-    <!-- ПЕРВЫЙ ЭКРАН: имена Egor & Angelina + фото -->
+    <!-- ПЕРВЫЙ ЭКРАН — ФИКСИРОВАННЫЙ -->
     <div class="first-screen" id="firstScreen">
         <div class="photo-bg" id="photoBg"></div>
         <div class="soft-veil"></div>
@@ -750,146 +758,151 @@
         </div>
     </div>
 
-    <!-- ДАТА: 07.08.2026 -->
-    <div class="second-screen" id="secondScreen">
-        <div class="invitation-container">
-            <h1 class="title">ДОРОГИЕ<br>ДРУЗЬЯ!</h1>
-            <div class="save-the-date">Save the date!</div>
-            <p class="description-text">Это официальное приглашение на нашу свадьбу! А получили вы его потому, что мы очень хотим видеть вас в этот день рядом с нами!</p>
-            <div class="line line-top"></div>
-            <div class="date-block">
-                <span class="date-number from-left-1">07</span><span class="dot">.</span><span class="date-number from-right">08</span><span class="dot">.</span><span class="date-number from-left-2">26</span>
-            </div>
-            <div class="line line-bottom"></div>
-            <div class="calendar-section">
-                <div class="calendar-month">Август 2026</div>
-                <div class="calendar-grid">
-                    <div class="weekday">пн</div><div class="weekday">вт</div><div class="weekday">ср</div><div class="weekday">чт</div><div class="weekday">пт</div><div class="weekday">сб</div><div class="weekday">вс</div>
-                    <div class="day empty-day"></div><div class="day empty-day"></div><div class="day empty-day"></div><div class="day empty-day"></div><div class="day empty-day"></div><div class="day">1</div><div class="day">2</div>
-                    <div class="day">3</div><div class="day">4</div><div class="day">5</div><div class="day">6</div><div class="day special-day">7<svg class="heart-svg" viewBox="0 0 50 50"><path class="heart-path" d="M25,15 C21,8 11,9 11,18 C11,27 23,36 25,38 C27,36 39,27 39,18 C39,9 29,8 25,15 Z"/></svg></div><div class="day">8</div><div class="day">9</div>
-                    <div class="day">10</div><div class="day">11</div><div class="day">12</div><div class="day">13</div><div class="day">14</div><div class="day">15</div><div class="day">16</div>
-                    <div class="day">17</div><div class="day">18</div><div class="day">19</div><div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23</div>
-                    <div class="day">24</div><div class="day">25</div><div class="day">26</div><div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div>
-                    <div class="day">31</div>
+    <!-- ОСТАЛЬНОЙ КОНТЕНТ -->
+    <div class="content-wrapper">
+
+        <!-- ДАТА -->
+        <div class="second-screen" id="secondScreen">
+            <div class="invitation-container">
+                <h1 class="title">ДОРОГИЕ<br>ДРУЗЬЯ!</h1>
+                <div class="save-the-date">Save the date!</div>
+                <p class="description-text">Это официальное приглашение на нашу свадьбу! А получили вы его потому, что мы очень хотим видеть вас в этот день рядом с нами!</p>
+                <div class="line line-top"></div>
+                <div class="date-block">
+                    <span class="date-number from-left-1">07</span><span class="dot">.</span><span class="date-number from-right">08</span><span class="dot">.</span><span class="date-number from-left-2">26</span>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ЛОКАЦИЯ -->
-    <div class="location-section" id="locationSection">
-        <div class="location-bg"></div>
-        <div class="location-card">
-            <div class="icon-scene"><svg class="location-svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#1a1a1a"/></svg></div>
-            <h2 class="location-title">МЕСТО<br>ПРОВЕДЕНИЯ</h2>
-            <div class="save-the-place">Save the place!</div>
-            <p class="venue-name">г. Барановичи, Ресторан «Купидон», Трасса Р-4 6-й км, 4.</p>
-            <a href="https://yandex.by/maps/org/kupidon/155164078978/?ll=26.048436%2C53.157833&mode=search&sctx=ZAAAAAgBEAAaKAoSCXmu78NBjjtAES%2F6CtKM80pAEhIJq7TFNT6TzT8RH%2FXXKyy4tz8iBgABAgMEBSgKOABAnQFIAWI8cmVsZXZfcGluX3N1YnRpdGxlX211bHRpY2xhc3M9cGluX3N1YnRpdGxlX211bHRpY2xhc3NfZm1sX3YzagJ1YZ0BzczMPaABAKgBAL0Bf7eZhsIBBoLn%2F4PCBIICXdCzLiDQkdCw0YDQsNC90L7QstC40YfQuCwg0KDQtdGB0YLQvtGA0LDQvCDCo9Ca0YPQv9C40LTQvtC9wrssINCi0YDQsNGB0YHQsCDQoC00IDYt0Lkg0LrQvCwgNIoCAJICBTIxMDE1mgIMZGVza3RvcC1tYXBz&sll=26.048436%2C53.157833&sspn=0.231056%2C0.094306&text=г.%20Барановичи%2C%20Ресторан%20«Купидон»%2C%20Трасса%20Р-4%206-й%20км%2C%204&z=12" target="_blank" class="btn-maps">Как добраться</a>
-        </div>
-    </div>
-
-    <!-- ТАЙМИНГ -->
-    <div class="timeline-screen" id="timelineScreen">
-        <div class="timeline-container">
-            <h2 class="timeline-main-title">Тайминг</h2>
-            <div class="timeline-subtitle">Of the day</div>
-            <div class="timeline-middle-line"></div>
-            <div class="timeline-list">
-                <div class="timeline-item slide-left"><div class="time">15:30</div><div class="timeline-desc">Сбор гостей</div></div>
-                <div class="timeline-item slide-left"><div class="time">16:00</div><div class="timeline-desc">Выездная регистрация</div></div>
-                <div class="timeline-item slide-right"><div class="time">16:30</div><div class="timeline-desc">Фотосессия</div></div>
-                <div class="timeline-item slide-right"><div class="time">17:00</div><div class="timeline-desc">Праздничный ужин</div></div>
-                <div class="timeline-item slide-right"><div class="time">23:00</div><div class="timeline-desc">Завершение вечера</div></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ДРЕСС-КОД (анимация снизу вверх при видимости) -->
-    <div class="dresscode-screen" id="dresscodeScreen">
-        <div class="dresscode-container">
-            <h1 class="dresscode-main-title">Дресс-код</h1>
-            <p class="dresscode-description">Строгого дресс-кода нет! Мы не ограничиваем вас в выборе нарядов. Будем рады видеть вас в любом образе, который вам по душе. Главное — ваше настроение и желание разделить с нами этот день!</p>
-        </div>
-    </div>
-
-    <!-- ТОНКАЯ ВЕРТИКАЛЬНАЯ ЛИНИЯ -->
-    <div class="divider-line"></div>
-
-    <!-- ФИНАЛЬНЫЙ БЛОК: имена на разных строчках + вертикальное фото (анимация снизу вверх) -->
-    <div class="final-block" id="finalBlock">
-        <div class="pre-closing">До скорой встречи!<br>С любовью</div>
-        <div class="final-names">
-            <span class="name-item name-left" id="finalAngelina">Angelina</span>
-            <span class="ampersand-item">&</span>
-            <span class="name-item name-right" id="finalEgor">Egor</span>
-        </div>
-        <div class="final-photo-wrapper">
-            <div class="final-photo"></div>
-        </div>
-    </div>
-
-    <!-- АНКЕТА ГОСТЯ -->
-    <div class="rsvp-screen" id="rsvpScreen">
-        <div class="rsvp-container">
-            <h2 class="rsvp-title">Анкета гостя</h2>
-            <div class="rsvp-subtitle">Please RSVP</div>
-            <div class="rsvp-deadline">Подтвердите присутствие до 25.07.2026</div>
-            
-            <form id="guestForm">
-                <div class="form-group">
-                    <label>Ваше имя и фамилия</label>
-                    <input type="text" id="guestName" placeholder="Например, Анна Петрова" required>
-                </div>
-                <div class="form-group">
-                    <label>Будете ли Вы присутствовать?</label>
-                    <div class="radio-group-vertical">
-                        <label><input type="radio" name="attendance" value="yes" required> Да, с радостью приду!</label>
-                        <label><input type="radio" name="attendance" value="no"> К сожалению, не смогу</label>
+                <div class="line line-bottom"></div>
+                <div class="calendar-section">
+                    <div class="calendar-month">Август 2026</div>
+                    <div class="calendar-grid">
+                        <div class="weekday">пн</div><div class="weekday">вт</div><div class="weekday">ср</div><div class="weekday">чт</div><div class="weekday">пт</div><div class="weekday">сб</div><div class="weekday">вс</div>
+                        <div class="day empty-day"></div><div class="day empty-day"></div><div class="day empty-day"></div><div class="day empty-day"></div><div class="day empty-day"></div><div class="day">1</div><div class="day">2</div>
+                        <div class="day">3</div><div class="day">4</div><div class="day">5</div><div class="day">6</div><div class="day special-day">7<svg class="heart-svg" viewBox="0 0 50 50"><path class="heart-path" d="M25,15 C21,8 11,9 11,18 C11,27 23,36 25,38 C27,36 39,27 39,18 C39,9 29,8 25,15 Z"/></svg></div><div class="day">8</div><div class="day">9</div>
+                        <div class="day">10</div><div class="day">11</div><div class="day">12</div><div class="day">13</div><div class="day">14</div><div class="day">15</div><div class="day">16</div>
+                        <div class="day">17</div><div class="day">18</div><div class="day">19</div><div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23</div>
+                        <div class="day">24</div><div class="day">25</div><div class="day">26</div><div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div>
+                        <div class="day">31</div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label>Выберите напитки (можно несколько)</label>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="drink" value="вино"> Вино</label>
-                        <label><input type="checkbox" name="drink" value="шампанское"> Шампанское</label>
-                        <label><input type="checkbox" name="drink" value="водка"> Водка</label>
-                        <label><input type="checkbox" name="drink" value="коньяк"> Коньяк</label>
-                        <label><input type="checkbox" name="drink" value="виски"> Виски</label>
-                        <label><input type="checkbox" name="drink" value="коктейль"> Коктейль</label>
-                        <label><input type="checkbox" name="drink" value="безалкогольное"> Безалкогольные</label>
-                    </div>
-                </div>
-                <button type="submit" class="submit-btn">Отправить ответ</button>
-                <div id="formMessage" class="hidden-message">Спасибо! Ждём вас на нашей свадьбе</div>
-            </form>
+            </div>
         </div>
-    </div>
 
-    <!-- КОНТАКТЫ -->
-    <div class="contacts-screen" id="contactsScreen">
-        <div class="contacts-container">
-            <h2 class="contacts-title">Контакты</h2>
-            <div class="contacts-subtitle">остались вопросы?</div>
-            
-            <div class="contacts-list">
-                <div class="contact-row">
-                    <span class="contact-role">Egor</span>
-                    <span class="contact-info"><a href="tel:+375336436043">+375 (33) 643-60-43</a></span>
-                </div>
-                <div class="contact-row">
-                    <span class="contact-role">Angelina</span>
-                    <span class="contact-info"><a href="tel:+375333834275">+375 (33) 383-42-75</a></span>
+        <!-- ЛОКАЦИЯ -->
+        <div class="location-section" id="locationSection">
+            <div class="location-bg"></div>
+            <div class="location-card">
+                <div class="icon-scene"><svg class="location-svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#1a1a1a"/></svg></div>
+                <h2 class="location-title">МЕСТО<br>ПРОВЕДЕНИЯ</h2>
+                <div class="save-the-place">Save the place!</div>
+                <p class="venue-name">г. Барановичи, Ресторан «Купидон», Трасса Р-4 6-й км, 4.</p>
+                <a href="https://yandex.by/maps/org/kupidon/155164078978/?ll=26.048436%2C53.157833&mode=search&sctx=ZAAAAAgBEAAaKAoSCXmu78NBjjtAES%2F6CtKM80pAEhIJq7TFNT6TzT8RH%2FXXKyy4tz8iBgABAgMEBSgKOABAnQFIAWI8cmVsZXZfcGluX3N1YnRpdGxlX211bHRpY2xhc3M9cGluX3N1YnRpdGxlX211bHRpY2xhc3NfZm1sX3YzagJ1YZ0BzczMPaABAKgBAL0Bf7eZhsIBBoLn%2F4PCBIICXdCzLiDQkdCw0YDQsNC90L7QstC40YfQuCwg0KDQtdGB0YLQvtGA0LDQvCDCo9Ca0YPQv9C40LTQvtC9wrssINCi0YDQsNGB0YHQsCDQoC00IDYt0Lkg0LrQvCwgNIoCAJICBTIxMDE1mgIMZGVza3RvcC1tYXBz&sll=26.048436%2C53.157833&sspn=0.231056%2C0.094306&text=г.%20Барановичи%2C%20Ресторан%20«Купидон»%2C%20Трасса%20Р-4%206-й%20км%2C%204&z=12" target="_blank" class="btn-maps">Как добраться</a>
+            </div>
+        </div>
+
+        <!-- ТАЙМИНГ -->
+        <div class="timeline-screen" id="timelineScreen">
+            <div class="timeline-container">
+                <h2 class="timeline-main-title">Тайминг</h2>
+                <div class="timeline-subtitle">Of the day</div>
+                <div class="timeline-middle-line"></div>
+                <div class="timeline-list">
+                    <div class="timeline-item slide-left"><div class="time">15:30</div><div class="timeline-desc">Сбор гостей</div></div>
+                    <div class="timeline-item slide-left"><div class="time">16:00</div><div class="timeline-desc">Выездная регистрация</div></div>
+                    <div class="timeline-item slide-right"><div class="time">16:30</div><div class="timeline-desc">Фотосессия</div></div>
+                    <div class="timeline-item slide-right"><div class="time">17:00</div><div class="timeline-desc">Праздничный ужин</div></div>
+                    <div class="timeline-item slide-right"><div class="time">23:00</div><div class="timeline-desc">Завершение вечера</div></div>
                 </div>
             </div>
-            
-            <div class="contacts-divider"></div>
-            <div class="contacts-copyright">Egor & Angelina</div>
         </div>
-    </div>
+
+        <!-- ДРЕСС-КОД -->
+        <div class="dresscode-screen" id="dresscodeScreen">
+            <div class="dresscode-container">
+                <h1 class="dresscode-main-title">Дресс-код</h1>
+                <p class="dresscode-description">Строгого дресс-кода нет! Мы не ограничиваем вас в выборе нарядов. Будем рады видеть вас в любом образе, который вам по душе. Главное — ваше настроение и желание разделить с нами этот день!</p>
+            </div>
+        </div>
+
+        <!-- ЛИНИЯ -->
+        <div class="divider-line"></div>
+
+        <!-- ФИНАЛЬНЫЙ БЛОК -->
+        <div class="final-block" id="finalBlock">
+            <div class="pre-closing">До скорой встречи!<br>С любовью</div>
+            <div class="final-names">
+                <span class="name-item name-left" id="finalAngelina">Angelina</span>
+                <span class="ampersand-item">&</span>
+                <span class="name-item name-right" id="finalEgor">Egor</span>
+            </div>
+            <div class="final-photo-wrapper">
+                <div class="final-photo"></div>
+            </div>
+        </div>
+
+        <!-- АНКЕТА ГОСТЯ -->
+        <div class="rsvp-screen" id="rsvpScreen">
+            <div class="rsvp-container">
+                <h2 class="rsvp-title">Анкета гостя</h2>
+                <div class="rsvp-subtitle">Please RSVP</div>
+                <div class="rsvp-deadline">Подтвердите присутствие до 25.07.2026</div>
+                
+                <form id="guestForm">
+                    <div class="form-group">
+                        <label>Ваше имя и фамилия</label>
+                        <input type="text" id="guestName" placeholder="Например, Анна Петрова" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Будете ли Вы присутствовать?</label>
+                        <div class="radio-group-vertical">
+                            <label><input type="radio" name="attendance" value="yes" required> Да, с радостью приду!</label>
+                            <label><input type="radio" name="attendance" value="no"> К сожалению, не смогу</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Выберите напитки (можно несколько)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="drink" value="вино"> Вино</label>
+                            <label><input type="checkbox" name="drink" value="шампанское"> Шампанское</label>
+                            <label><input type="checkbox" name="drink" value="водка"> Водка</label>
+                            <label><input type="checkbox" name="drink" value="коньяк"> Коньяк</label>
+                            <label><input type="checkbox" name="drink" value="виски"> Виски</label>
+                            <label><input type="checkbox" name="drink" value="коктейль"> Коктейль</label>
+                            <label><input type="checkbox" name="drink" value="безалкогольное"> Безалкогольные</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">Отправить ответ</button>
+                    <div id="formMessage" class="hidden-message">Спасибо! Ждём вас на нашей свадьбе</div>
+                </form>
+            </div>
+        </div>
+
+        <!-- КОНТАКТЫ -->
+        <div class="contacts-screen" id="contactsScreen">
+            <div class="contacts-container">
+                <h2 class="contacts-title">Контакты</h2>
+                <div class="contacts-subtitle">остались вопросы?</div>
+                
+                <div class="contacts-list">
+                    <div class="contact-row">
+                        <span class="contact-role">Egor</span>
+                        <span class="contact-info"><a href="tel:+375336436043">+375 (33) 643-60-43</a></span>
+                    </div>
+                    <div class="contact-row">
+                        <span class="contact-role">Angelina</span>
+                        <span class="contact-info"><a href="tel:+375333834275">+375 (33) 383-42-75</a></span>
+                    </div>
+                </div>
+                
+                <div class="contacts-divider"></div>
+                <div class="contacts-copyright">Egor & Angelina</div>
+            </div>
+        </div>
+
+    </div><!-- /content-wrapper -->
 
     <script>
         (function() {
-            // Первый экран — фиксированная высота, проблем с прокруткой нет
+            // Первый экран — анимации
             const firstObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -946,7 +959,7 @@
                 }, { threshold: 0.5 }).observe(timeline);
             }
 
-            // Дресс-код — анимация снизу вверх при видимости
+            // Дресс-код
             const dressScreen = document.getElementById('dresscodeScreen');
             if (dressScreen) {
                 const drObs = new IntersectionObserver((entries) => {
@@ -960,7 +973,7 @@
                 drObs.observe(dressScreen);
             }
 
-            // Финальный блок — анимация снизу вверх при видимости
+            // Финальный блок
             const finalBlock = document.getElementById('finalBlock');
             if (finalBlock) {
                 const fbObs = new IntersectionObserver((entries) => {
