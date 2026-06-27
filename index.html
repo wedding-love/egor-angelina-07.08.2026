@@ -49,7 +49,7 @@
             background-color: #ffffff;
         }
 
-        /* ----- ПЕРВЫЙ ЭКРАН (ПРОКРУЧИВАЕТСЯ) ----- */
+        /* ----- ПЕРВЫЙ ЭКРАН (ПРОКРУЧИВАЕТСЯ) - ИСПРАВЛЕННЫЙ ----- */
         .first-screen {
             position: relative;
             width: 100%;
@@ -57,6 +57,10 @@
             min-height: 100dvh;
             overflow: hidden;
             background-color: #f5f0eb;
+            /* Фиксируем пропорции */
+            aspect-ratio: 9 / 16;
+            max-height: 100vh;
+            max-height: 100dvh;
         }
 
         .photo-bg {
@@ -65,16 +69,25 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('молодые.jpg');
-            background-size: cover;
-            background-position: center 30%;
-            opacity: 0;
-            filter: brightness(0.85) contrast(1.02);
-            transition: opacity 3.5s ease-out;
             z-index: 1;
         }
 
-        .photo-bg.visible { opacity: 1; }
+        .photo-container {
+            width: 100%;
+            height: 100%;
+            background-image: url('молодые.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+            opacity: 0;
+            filter: brightness(0.85) contrast(1.02);
+            transition: opacity 3.5s ease-out;
+            will-change: opacity;
+        }
+
+        .photo-container.visible { 
+            opacity: 1; 
+        }
         
         .soft-veil {
             position: absolute;
@@ -91,6 +104,7 @@
             position: relative;
             z-index: 3;
             width: 100%;
+            height: 100%;
             min-height: 100vh;
             min-height: 100dvh;
             display: flex;
@@ -197,6 +211,7 @@
             width: 100%;
             background: #fff;
             padding: 60px 20px;
+            flex-shrink: 0;
         }
 
         .invitation-container {
@@ -395,6 +410,7 @@
             background: #fff;
             opacity: 0;
             transition: opacity 0.5s ease;
+            flex-shrink: 0;
         }
 
         .location-section.visible {
@@ -500,6 +516,7 @@
         .timeline-screen {
             background: #fff;
             padding: 50px 20px 60px;
+            flex-shrink: 0;
         }
 
         .timeline-container {
@@ -566,13 +583,14 @@
             margin: 0 auto;
         }
 
-        /* ----- ДРЕСС-КОД (без кружочков) ----- */
+        /* ----- ДРЕСС-КОД ----- */
         .dresscode-screen {
             background: #fff;
             padding: 40px 16px 60px;
             opacity: 0;
             transform: translateY(60px);
             transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1);
+            flex-shrink: 0;
         }
 
         .dresscode-screen.visible {
@@ -623,7 +641,7 @@
             transform: translateY(0);
         }
 
-        /* ----- ФИНАЛЬНЫЙ БЛОК (ИМЕНА + ФОТО) ----- */
+        /* ----- ФИНАЛЬНЫЙ БЛОК ----- */
         .final-block {
             background: #fff;
             padding: 40px 20px 60px;
@@ -631,6 +649,7 @@
             opacity: 0;
             transform: translateY(60px);
             transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1);
+            flex-shrink: 0;
         }
 
         .final-block.visible {
@@ -728,6 +747,7 @@
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1);
+            flex-shrink: 0;
         }
 
         .rsvp-screen.visible {
@@ -879,6 +899,7 @@
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1);
+            flex-shrink: 0;
         }
 
         .contacts-screen.visible {
@@ -973,6 +994,9 @@
             .ekaterina-name { margin-left: 50px; }
             .delicate-ampersand { font-size: 3.5rem; margin-top: -3px; margin-bottom: -3px; }
             .final-names .name-item { font-size: 36px; }
+            .first-screen {
+                aspect-ratio: 9 / 16;
+            }
         }
         @media (max-width: 580px) {
             .name-line { font-size: 2.2rem; }
@@ -991,9 +1015,11 @@
 </head>
 <body>
 
-    <!-- ПЕРВЫЙ ЭКРАН (ПРОКРУЧИВАЕТСЯ) -->
+    <!-- ПЕРВЫЙ ЭКРАН (ПРОКРУЧИВАЕТСЯ) - ИСПРАВЛЕННЫЙ -->
     <div class="first-screen" id="firstScreen">
-        <div class="photo-bg" id="photoBg"></div>
+        <div class="photo-bg" id="photoBg">
+            <div class="photo-container" id="photoContainer"></div>
+        </div>
         <div class="soft-veil"></div>
         <div class="content-first">
             <div class="wedding-script" id="weddingScript">Wedding</div>
@@ -1066,7 +1092,7 @@
         </div>
     </div>
 
-    <!-- ДРЕСС-КОД (без кружочков) -->
+    <!-- ДРЕСС-КОД -->
     <div class="dresscode-screen" id="dresscodeScreen">
         <div class="dresscode-container">
             <h1 class="dresscode-main-title" id="dresscodeMainTitle">Дресс-код</h1>
@@ -1150,11 +1176,14 @@
 
     <script>
         (function() {
-            // Первый экран — анимации
+            // Первый экран — анимации (ИСПРАВЛЕННЫЙ)
             const firstObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        setTimeout(() => document.getElementById('photoBg')?.classList.add('visible'), 100);
+                        const photoContainer = document.getElementById('photoContainer');
+                        if (photoContainer) {
+                            setTimeout(() => photoContainer.classList.add('visible'), 100);
+                        }
                         setTimeout(() => document.getElementById('weddingScript')?.classList.add('visible'), 800);
                         setTimeout(() => document.getElementById('artemName')?.classList.add('visible'), 1400);
                         setTimeout(() => document.getElementById('ampersand')?.classList.add('visible'), 1750);
@@ -1163,7 +1192,11 @@
                     }
                 });
             }, { threshold: 0.1 });
-            firstObserver.observe(document.getElementById('firstScreen'));
+            
+            const firstScreen = document.getElementById('firstScreen');
+            if (firstScreen) {
+                firstObserver.observe(firstScreen);
+            }
 
             // Второй экран
             const secondContainer = document.querySelector('.invitation-container');
