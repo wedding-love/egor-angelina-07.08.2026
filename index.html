@@ -579,7 +579,7 @@
             margin: 0 auto;
         }
 
-        /* ----- ДРЕСС-КОД ----- */
+        /* ----- ДРЕСС-КОД (анимация снизу вверх) ----- */
         .dresscode-screen {
             background: #fff;
             padding: 40px 16px 60px;
@@ -637,7 +637,7 @@
             transform: translateY(0);
         }
 
-        /* ----- ФИНАЛЬНЫЙ БЛОК ----- */
+        /* ----- ФИНАЛЬНЫЙ БЛОК (анимация снизу вверх) ----- */
         .final-block {
             background: #fff;
             padding: 40px 20px 60px;
@@ -660,6 +660,14 @@
             letter-spacing: 1px;
             color: #777;
             margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 1.2s cubic-bezier(0.25, 0.8, 0.4, 1);
+        }
+
+        .final-block.visible .pre-closing {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .final-names {
@@ -713,13 +721,14 @@
             opacity: 1;
         }
 
+        /* ФИНАЛЬНОЕ ФОТО — анимация снизу вверх при появлении */
         .final-photo-wrapper {
             max-width: 450px;
             margin: 0 auto;
             padding: 0 10px;
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s cubic-bezier(0.25,0.8,0.4,1), transform 1s cubic-bezier(0.25,0.8,0.4,1);
+            transform: translateY(50px);
+            transition: opacity 1.4s cubic-bezier(0.25, 0.8, 0.4, 1), transform 1.4s cubic-bezier(0.25, 0.8, 0.4, 1);
         }
 
         .final-block.visible .final-photo-wrapper {
@@ -1089,7 +1098,7 @@
     <div class="dresscode-screen" id="dresscodeScreen">
         <div class="dresscode-container">
             <h1 class="dresscode-main-title" id="dresscodeMainTitle">Дресс-код</h1>
-            <p class="dresscode-description" id="dresscodeDescription">Строгого дресс-кода нет! Мы не ограничиваем вас в выборе нарядов. Будем рады видеть вас в любом образе, который вам по душе. Главное — ваше настроение и желание разделить с нами этот день!</p>
+            <p class="dresscode-description" id="dresscodeDescription">Мы не ограничиваем вас в выборе нарядов. Будем рады видеть вас в любом образе, который вам по душе. Главное — ваше настроение и желание разделить с нами этот день!</p>
         </div>
     </div>
 
@@ -1244,15 +1253,19 @@
                 timelineObserver.observe(timeline);
             }
 
-            // Дресс-код
+            // Дресс-код — анимация снизу вверх с задержками для элементов
             const dressScreen = document.getElementById('dresscodeScreen');
             if (dressScreen) {
                 const drObs = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             dressScreen.classList.add('visible');
-                            document.getElementById('dresscodeMainTitle')?.classList.add('visible');
-                            document.getElementById('dresscodeDescription')?.classList.add('visible');
+                            setTimeout(() => {
+                                document.getElementById('dresscodeMainTitle')?.classList.add('visible');
+                            }, 200);
+                            setTimeout(() => {
+                                document.getElementById('dresscodeDescription')?.classList.add('visible');
+                            }, 400);
                             drObs.disconnect();
                         }
                     });
@@ -1260,7 +1273,7 @@
                 drObs.observe(dressScreen);
             }
 
-            // Финальный блок
+            // Финальный блок — анимация снизу вверх
             const finalBlock = document.getElementById('finalBlock');
             if (finalBlock) {
                 const fbObs = new IntersectionObserver((entries) => {
