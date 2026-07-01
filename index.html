@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Приглашение на свадьбу | Егор & Ангелина</title>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@100;200;300;400;500;700;800&family=Parisienne&family=Pinyon+Script&display=swap" rel="stylesheet">
-    
+
     <style>
         @font-face {
             font-family: 'Lighthaus';
@@ -15,7 +15,6 @@
             font-style: normal;
             font-display: swap;
         }
-        
         @font-face {
             font-family: 'Lighthaus';
             src: url('Lighthaus.otf') format('opentype');
@@ -23,7 +22,6 @@
             font-style: normal;
             font-display: swap;
         }
-        
         @font-face {
             font-family: 'Lighthaus';
             src: url('Lighthaus.otf') format('opentype');
@@ -32,23 +30,9 @@
             font-display: swap;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
-            width: 100%;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            height: 100%;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #ffffff;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; overflow-x: hidden; scroll-behavior: smooth; height: 100%; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #ffffff; }
 
         /* ----- ПЕРВЫЙ ЭКРАН (ФИКСИРОВАННЫЙ) ----- */
         .first-screen {
@@ -60,7 +44,6 @@
             background-color: #f5f0eb;
             flex-shrink: 0;
         }
-
         .photo-bg {
             position: absolute;
             top: 0;
@@ -69,7 +52,6 @@
             height: 100%;
             z-index: 1;
         }
-
         .photo-container {
             width: 100%;
             height: 100%;
@@ -82,11 +64,7 @@
             transition: opacity 3.5s ease-out;
             will-change: opacity;
         }
-
-        .photo-container.visible { 
-            opacity: 1; 
-        }
-        
+        .photo-container.visible { opacity: 1; }
         .soft-veil {
             position: absolute;
             top: 0;
@@ -97,7 +75,6 @@
             z-index: 2;
             pointer-events: none;
         }
-
         .content-first {
             position: relative;
             z-index: 3;
@@ -109,7 +86,6 @@
             align-items: center;
             padding: 2rem;
         }
-
         .wedding-script {
             font-family: 'Parisienne', cursive;
             font-size: 3.2rem;
@@ -121,7 +97,6 @@
             transition: opacity 2.5s cubic-bezier(0.2,0.9,0.3,1.1), transform 2.5s cubic-bezier(0.2,0.9,0.3,1.1);
         }
         .wedding-script.visible { opacity: 1; transform: translateY(0); }
-
         .names-block-first {
             position: absolute;
             bottom: 115px;
@@ -146,24 +121,15 @@
             opacity: 0;
             line-height: 1.1;
         }
-        .egor-name {
-            transform: translateX(-35px);
-            transition: opacity 2s cubic-bezier(0.2,0.9,0.3,1.1), transform 2s cubic-bezier(0.2,0.9,0.3,1.1);
-        }
-        .angelina-name {
-            margin-left: 65px;
-            transform: translateX(35px);
-            transition: opacity 2s cubic-bezier(0.2,0.9,0.3,1.1), transform 2s cubic-bezier(0.2,0.9,0.3,1.1);
-        }
+        .egor-name { transform: translateX(-35px); transition: opacity 2s cubic-bezier(0.2,0.9,0.3,1.1), transform 2s cubic-bezier(0.2,0.9,0.3,1.1); }
+        .angelina-name { margin-left: 65px; transform: translateX(35px); transition: opacity 2s cubic-bezier(0.2,0.9,0.3,1.1), transform 2s cubic-bezier(0.2,0.9,0.3,1.1); }
         .egor-name.visible, .angelina-name.visible { opacity: 1; transform: translateX(0); }
-
         .delicate-ampersand {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             font-weight: 600;
             font-size: 4.0rem;
             color: rgba(255, 255, 255, 0.6);
-            text-shadow: none;
             line-height: 0.9;
             margin-top: -4px;
             margin-bottom: -4px;
@@ -173,7 +139,6 @@
             transition: opacity 2s cubic-bezier(0.2,0.9,0.3,1.1), transform 2s cubic-bezier(0.2,0.9,0.3,1.1);
         }
         .delicate-ampersand.visible { opacity: 0.65; transform: translateX(0); }
-
         .scroll-down {
             position: absolute;
             bottom: 50px;
@@ -203,19 +168,8 @@
         .arrow-icon-svg { margin-left: 8px; width: 11px; height: 11px; stroke: #1a1a1a; }
 
         /* ----- ВТОРОЙ ЭКРАН ----- */
-        .second-screen {
-            width: 100%;
-            background: #fff;
-            padding: 60px 20px;
-            flex-shrink: 0;
-        }
-
-        .invitation-container {
-            text-align: center;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
+        .second-screen { width: 100%; background: #fff; padding: 60px 20px; flex-shrink: 0; }
+        .invitation-container { text-align: center; max-width: 400px; margin: 0 auto; }
         .title {
             font-family: 'Lighthaus', 'Quicksand', sans-serif;
             font-weight: 400;
@@ -228,7 +182,6 @@
             transform: translateY(50px);
             transition: opacity 2.5s cubic-bezier(0.2,0.9,0.3,1.1), transform 2.5s cubic-bezier(0.2,0.9,0.3,1.1);
         }
-
         .save-the-date {
             font-family: 'Pinyon Script', cursive;
             font-size: clamp(2rem, 4.5vw, 2.4rem);
@@ -238,7 +191,6 @@
             transform: translateY(50px);
             transition: opacity 2.5s cubic-bezier(0.2,0.9,0.3,1.1), transform 2.5s cubic-bezier(0.2,0.9,0.3,1.1);
         }
-
         .description-text {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.85rem;
@@ -252,35 +204,10 @@
             transform: translateY(50px);
             transition: opacity 2.5s cubic-bezier(0.2,0.9,0.3,1.1), transform 2.5s cubic-bezier(0.2,0.9,0.3,1.1);
         }
-
-        .line {
-            width: 1px;
-            background: #1a1a1a;
-            height: 60px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: scaleY(0);
-            transition: opacity 2.5s cubic-bezier(0.2,0.9,0.3,1.1), transform 2.5s cubic-bezier(0.2,0.9,0.3,1.1);
-        }
-
-        .line-top {
-            margin-bottom: 30px;
-            transform-origin: top;
-        }
-
-        .line-bottom {
-            margin-top: 30px;
-            margin-bottom: 50px;
-            transform-origin: bottom;
-        }
-
-        .date-block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-        }
-
+        .line { width: 1px; background: #1a1a1a; height: 60px; margin: 0 auto; opacity: 0; transform: scaleY(0); transition: opacity 2.5s cubic-bezier(0.2,0.9,0.3,1.1), transform 2.5s cubic-bezier(0.2,0.9,0.3,1.1); }
+        .line-top { margin-bottom: 30px; transform-origin: top; }
+        .line-bottom { margin-top: 30px; margin-bottom: 50px; transform-origin: bottom; }
+        .date-block { display: flex; flex-direction: column; align-items: center; gap: 5px; }
         .date-number {
             font-family: 'Bodoni Moda', 'Playfair Display', serif;
             font-size: clamp(2.8rem, 6.5vw, 3.5rem);
@@ -289,218 +216,34 @@
             line-height: 0.9;
             opacity: 0;
         }
-
-        .from-left-1,
-        .from-left-2 {
-            transform: translateX(-100px);
-            transition: opacity 2.5s cubic-bezier(0.2,0.9,0.3,1.1), transform 2.5s cubic-bezier(0.2,0.9,0.3,1.1);
-        }
-
-        .from-right {
-            transform: translateX(100px);
-            transition: opacity 2.5s cubic-bezier(0.2,0.9,0.3,1.1), transform 2.5s cubic-bezier(0.2,0.9,0.3,1.1);
-        }
-
-        .dot {
-            font-size: 1.3rem;
-            color: #1a1a1a;
-            margin: 3px 0;
-            opacity: 0;
-            transition: opacity 2s ease;
-        }
-
-        .calendar-section {
-            max-width: 280px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(120px);
-            transition: opacity 3.5s cubic-bezier(0.16,1,0.3,1.1), transform 3.5s cubic-bezier(0.16,1,0.3,1.1);
-        }
-
-        .calendar-month {
-            font-family: 'Bodoni Moda', 'Playfair Display', serif;
-            font-size: 1.3rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-        }
-
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7,1fr);
-            gap: 12px 6px;
-        }
-
-        .weekday {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 400;
-            color: #999;
-            text-transform: lowercase;
-        }
-
-        .day {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 300;
-            color: #1a1a1a;
-            position: relative;
-            height: 28px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .empty-day {
-            visibility: hidden;
-        }
-
-        .heart-svg {
-            position: absolute;
-            width: 38px;
-            height: 38px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-46%);
-            pointer-events: none;
-        }
-
-        .heart-path {
-            stroke: #1a1a1a;
-            stroke-width: 1.1;
-            fill: none;
-        }
-
-        .title.visible,
-        .save-the-date.visible,
-        .description-text.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .line.visible {
-            opacity: 0.6;
-            transform: scaleY(1);
-        }
-
-        .date-number.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .dot.visible {
-            opacity: 1;
-        }
-
-        .calendar-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .from-left-1, .from-left-2 { transform: translateX(-100px); transition: opacity 2.5s cubic-bezier(0.2,0.9,0.3,1.1), transform 2.5s cubic-bezier(0.2,0.9,0.3,1.1); }
+        .from-right { transform: translateX(100px); transition: opacity 2.5s cubic-bezier(0.2,0.9,0.3,1.1), transform 2.5s cubic-bezier(0.2,0.9,0.3,1.1); }
+        .dot { font-size: 1.3rem; color: #1a1a1a; margin: 3px 0; opacity: 0; transition: opacity 2s ease; }
+        .calendar-section { max-width: 280px; margin: 0 auto; opacity: 0; transform: translateY(120px); transition: opacity 3.5s cubic-bezier(0.16,1,0.3,1.1), transform 3.5s cubic-bezier(0.16,1,0.3,1.1); }
+        .calendar-month { font-family: 'Bodoni Moda', 'Playfair Display', serif; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 20px; }
+        .calendar-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 12px 6px; }
+        .weekday { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 400; color: #999; text-transform: lowercase; }
+        .day { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 300; color: #1a1a1a; position: relative; height: 28px; display: flex; justify-content: center; align-items: center; }
+        .empty-day { visibility: hidden; }
+        .heart-svg { position: absolute; width: 38px; height: 38px; top: 50%; left: 50%; transform: translate(-50%,-46%); pointer-events: none; }
+        .heart-path { stroke: #1a1a1a; stroke-width: 1.1; fill: none; }
+        .title.visible, .save-the-date.visible, .description-text.visible { opacity: 1; transform: translateY(0); }
+        .line.visible { opacity: 0.6; transform: scaleY(1); }
+        .date-number.visible { opacity: 1; transform: translateX(0); }
+        .dot.visible { opacity: 1; }
+        .calendar-section.visible { opacity: 1; transform: translateY(0); }
 
         /* ----- ЛОКАЦИЯ ----- */
-        .location-section {
-            position: relative;
-            max-width: 450px;
-            margin: 0 auto;
-            padding: 50px 25px;
-            background: #fff;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            flex-shrink: 0;
-        }
-
-        .location-section.visible {
-            opacity: 1;
-        }
-
-        .location-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('место.png');
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 2.5s cubic-bezier(0.2,0.9,0.4,1) 0.3s;
-            z-index: 1;
-            filter: grayscale(1);
-        }
-
-        .location-card {
-            position: relative;
-            z-index: 2;
-            background: #fff;
-            padding: 40px 25px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-        }
-
-        .icon-scene {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 20px;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: opacity 2s cubic-bezier(0.2,0.9,0.3,1.1), transform 2s cubic-bezier(0.2,0.9,0.3,1.1);
-        }
-
-        .location-title {
-            font-family: 'Lighthaus', 'Quicksand', sans-serif;
-            font-weight: 400;
-            font-size: clamp(1.6rem, 4vw, 2rem);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            opacity: 0;
-            transform: translateX(-60px);
-            transition: opacity 2s cubic-bezier(0.2,0.9,0.3,1.1), transform 2s cubic-bezier(0.2,0.9,0.3,1.1);
-        }
-
-        .save-the-place {
-            font-family: 'Pinyon Script', cursive;
-            font-size: clamp(2rem, 5vw, 2.5rem);
-            font-weight: 400;
-            margin-bottom: 20px;
-            display: inline-block;
-            transform: skewX(-3deg) translateX(60px);
-            opacity: 0;
-            transition: opacity 2s cubic-bezier(0.2,0.9,0.3,1.1), transform 2s cubic-bezier(0.2,0.9,0.3,1.1);
-        }
-
-        .venue-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 800;
-            line-height: 1.4;
-            max-width: 260px;
-            margin: 0 auto 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0;
-            transform: translateY(55px);
-            transition: opacity 2.8s cubic-bezier(0.16,1,0.3,1.1), transform 2.8s cubic-bezier(0.16,1,0.3,1.1);
-        }
-
-        .btn-maps {
-            display: inline-block;
-            background: #1a1a1a;
-            color: #fff;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-            padding: 12px 30px;
-            text-transform: uppercase;
-            opacity: 0;
-            transform: translateY(55px);
-            transition: opacity 3s cubic-bezier(0.16,1,0.3,1.1), transform 3s cubic-bezier(0.16,1,0.3,1.1);
-        }
-
+        .location-section { position: relative; max-width: 450px; margin: 0 auto; padding: 50px 25px; background: #fff; opacity: 0; transition: opacity 0.5s ease; flex-shrink: 0; }
+        .location-section.visible { opacity: 1; }
+        .location-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('место.png'); background-size: cover; background-position: center; opacity: 0; transition: opacity 2.5s cubic-bezier(0.2,0.9,0.4,1) 0.3s; z-index: 1; filter: grayscale(1); }
+        .location-card { position: relative; z-index: 2; background: #fff; padding: 40px 25px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        .icon-scene { width: 70px; height: 70px; margin: 0 auto 20px; opacity: 0; transform: scale(0.8); transition: opacity 2s cubic-bezier(0.2,0.9,0.3,1.1), transform 2s cubic-bezier(0.2,0.9,0.3,1.1); }
+        .location-title { font-family: 'Lighthaus', 'Quicksand', sans-serif; font-weight: 400; font-size: clamp(1.6rem, 4vw, 2rem); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; opacity: 0; transform: translateX(-60px); transition: opacity 2s cubic-bezier(0.2,0.9,0.3,1.1), transform 2s cubic-bezier(0.2,0.9,0.3,1.1); }
+        .save-the-place { font-family: 'Pinyon Script', cursive; font-size: clamp(2rem, 5vw, 2.5rem); font-weight: 400; margin-bottom: 20px; display: inline-block; transform: skewX(-3deg) translateX(60px); opacity: 0; transition: opacity 2s cubic-bezier(0.2,0.9,0.3,1.1), transform 2s cubic-bezier(0.2,0.9,0.3,1.1); }
+        .venue-name { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 800; line-height: 1.4; max-width: 260px; margin: 0 auto 30px; text-transform: uppercase; letter-spacing: 1px; opacity: 0; transform: translateY(55px); transition: opacity 2.8s cubic-bezier(0.16,1,0.3,1.1), transform 2.8s cubic-bezier(0.16,1,0.3,1.1); }
+        .btn-maps { display: inline-block; background: #1a1a1a; color: #fff; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 400; letter-spacing: 2px; padding: 12px 30px; text-transform: uppercase; opacity: 0; transform: translateY(55px); transition: opacity 3s cubic-bezier(0.16,1,0.3,1.1), transform 3s cubic-bezier(0.16,1,0.3,1.1); }
         .btn-maps:hover { background: #333; }
-
         .location-section.visible .location-bg { opacity: 1; }
         .location-section.visible .icon-scene { opacity: 1; transform: scale(1); }
         .location-section.visible .location-title { opacity: 1; transform: translateX(0); }
@@ -509,555 +252,88 @@
         .location-section.visible .btn-maps { opacity: 1; transform: translateY(0); }
 
         /* ----- ТАЙМИНГ ----- */
-        .timeline-screen {
-            background: #fff;
-            padding: 50px 20px 60px;
-            flex-shrink: 0;
-        }
-
-        .timeline-container {
-            max-width: 400px;
-            margin: 0 auto;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1.8s cubic-bezier(0.2,0.9,0.3,1.1), transform 1.8s cubic-bezier(0.2,0.9,0.3,1.1);
-        }
-
-        .timeline-container.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .timeline-main-title {
-            font-family: 'Lighthaus', 'Quicksand', sans-serif;
-            font-weight: 400;
-            font-size: clamp(1.8rem, 4.5vw, 2.2rem);
-            text-transform: uppercase;
-            letter-spacing: 6px;
-            margin-bottom: 8px;
-        }
-
-        .timeline-subtitle {
-            font-family: 'Pinyon Script', cursive;
-            font-size: clamp(1.3rem, 3.5vw, 1.6rem);
-            margin-bottom: 25px;
-        }
-
-        .timeline-middle-line {
-            width: 1px;
-            background: #b5b5b5;
-            margin: 0 auto 30px auto;
-            height: 50px;
-        }
-
-        .timeline-list {
-            margin: 35px 0 25px;
-        }
-
-        .timeline-item {
-            margin: 30px 0;
-            opacity: 0;
-            transition: opacity 0.8s cubic-bezier(0.2,0.9,0.3,1.1), transform 0.8s cubic-bezier(0.2,0.9,0.3,1.1);
-        }
-
+        .timeline-screen { background: #fff; padding: 50px 20px 60px; flex-shrink: 0; }
+        .timeline-container { max-width: 400px; margin: 0 auto; text-align: center; opacity: 0; transform: translateY(30px); transition: opacity 1.8s cubic-bezier(0.2,0.9,0.3,1.1), transform 1.8s cubic-bezier(0.2,0.9,0.3,1.1); }
+        .timeline-container.visible { opacity: 1; transform: translateY(0); }
+        .timeline-main-title { font-family: 'Lighthaus', 'Quicksand', sans-serif; font-weight: 400; font-size: clamp(1.8rem, 4.5vw, 2.2rem); text-transform: uppercase; letter-spacing: 6px; margin-bottom: 8px; }
+        .timeline-subtitle { font-family: 'Pinyon Script', cursive; font-size: clamp(1.3rem, 3.5vw, 1.6rem); margin-bottom: 25px; }
+        .timeline-middle-line { width: 1px; background: #b5b5b5; margin: 0 auto 30px auto; height: 50px; }
+        .timeline-list { margin: 35px 0 25px; }
+        .timeline-item { margin: 30px 0; opacity: 0; transition: opacity 0.8s cubic-bezier(0.2,0.9,0.3,1.1), transform 0.8s cubic-bezier(0.2,0.9,0.3,1.1); }
         .timeline-item.slide-left { transform: translateX(-40px); }
         .timeline-item.slide-right { transform: translateX(40px); }
         .timeline-item.visible { opacity: 1; transform: translateX(0); }
-        .timeline-item .time {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 32px;
-            font-weight: 500;
-            margin-bottom: 6px;
-        }
-        .timeline-item .timeline-desc {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 400;
-            color: #333;
-            max-width: 300px;
-            margin: 0 auto;
-        }
+        .timeline-item .time { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; margin-bottom: 6px; }
+        .timeline-item .timeline-desc { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 400; color: #333; max-width: 300px; margin: 0 auto; }
 
-        /* ----- ДРЕСС-КОД (анимация снизу вверх) ----- */
-        .dresscode-screen {
-            background: #fff;
-            padding: 40px 16px 60px;
-            opacity: 0;
-            transform: translateY(60px);
-            transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1);
-            flex-shrink: 0;
-        }
+        /* ----- ДРЕСС-КОД, ПОЖЕЛАНИЯ, ФИНАЛ, RSVP, КОНТАКТЫ (анимации и стили) ----- */
+        .dresscode-screen { background: #fff; padding: 40px 16px 60px; opacity: 0; transform: translateY(60px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); flex-shrink: 0; }
+        .dresscode-screen.visible { opacity: 1; transform: translateY(0); }
+        .dresscode-container { width: 100%; max-width: 450px; margin: 0 auto; text-align: center; }
+        .dresscode-main-title { font-family: 'Lighthaus', 'Quicksand', sans-serif; font-weight: 400; font-size: 42px; text-transform: uppercase; letter-spacing: 3px; color: #121212; margin-bottom: 24px; opacity: 0; transform: translateY(40px); transition: opacity 2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 2s cubic-bezier(0.25, 0.8, 0.4, 1); }
+        .dresscode-main-title.visible { opacity: 1; transform: translateY(0); }
+        .dresscode-description { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 300; line-height: 1.7; color: #555; max-width: 360px; margin: 0 auto 30px; opacity: 0; transform: translateY(40px); transition: opacity 2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 2s cubic-bezier(0.25, 0.8, 0.4, 1); }
+        .dresscode-description.visible { opacity: 1; transform: translateY(0); }
 
-        .dresscode-screen.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .wishes-screen { background: #fff; padding: 40px 20px 60px; opacity: 0; transform: translateY(60px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); flex-shrink: 0; border-top: 1px solid #f0f0f0; }
+        .wishes-screen.visible { opacity: 1; transform: translateY(0); }
+        .wishes-container { max-width: 450px; margin: 0 auto; text-align: center; }
+        .wishes-title { font-family: 'Lighthaus', 'Quicksand', sans-serif; font-weight: 400; font-size: 36px; text-transform: uppercase; letter-spacing: 3px; color: #121212; margin-bottom: 20px; opacity: 0; transform: translateY(40px); transition: opacity 2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 2s cubic-bezier(0.25, 0.8, 0.4, 1); }
+        .wishes-title.visible { opacity: 1; transform: translateY(0); }
+        .wishes-text { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 300; line-height: 1.8; color: #444; max-width: 360px; margin: 0 auto; opacity: 0; transform: translateY(40px); transition: opacity 2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 2s cubic-bezier(0.25, 0.8, 0.4, 1); }
+        .wishes-text.visible { opacity: 1; transform: translateY(0); }
+        .divider-line { width: 1px; height: 60px; background: #1a1a1a; margin: 0 auto; opacity: 0.4; }
 
-        .dresscode-container {
-            width: 100%;
-            max-width: 450px;
-            margin: 0 auto;
-            text-align: center;
-        }
+        .final-block { background: #fff; padding: 40px 20px 60px; text-align: center; opacity: 0; transform: translateY(60px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); flex-shrink: 0; }
+        .final-block.visible { opacity: 1; transform: translateY(0); }
+        .final-block .pre-closing { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 1px; color: #777; margin-bottom: 30px; opacity: 0; transform: translateY(30px); transition: opacity 1.2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 1.2s cubic-bezier(0.25, 0.8, 0.4, 1); }
+        .final-block.visible .pre-closing { opacity: 1; transform: translateY(0); }
+        .final-names { display: flex; flex-direction: column; align-items: center; margin-bottom: 35px; gap: 0; }
+        .final-names .name-item { font-family: 'Lighthaus', 'Quicksand', sans-serif; font-weight: 300; font-size: 46px; text-transform: uppercase; letter-spacing: 5px; line-height: 1.2; color: #121212; opacity: 0; transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.4, 1); }
+        .final-names .name-left { transform: translateX(-60px); }
+        .final-names .name-right { transform: translateX(60px); }
+        .final-block.visible .name-left { opacity: 1; transform: translateX(0); }
+        .final-block.visible .name-right { opacity: 1; transform: translateX(0); }
+        .final-names .ampersand-item { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 38px; font-weight: 400; color: #121212; opacity: 0; transition: opacity 0.8s ease 0.2s; margin: 8px 0; }
+        .final-block.visible .ampersand-item { opacity: 1; }
+        .final-photo-wrapper { max-width: 450px; margin: 0 auto; padding: 0 10px; opacity: 0; transform: translateY(50px); transition: opacity 1.4s cubic-bezier(0.25, 0.8, 0.4, 1), transform 1.4s cubic-bezier(0.25, 0.8, 0.4, 1); }
+        .final-block.visible .final-photo-wrapper { opacity: 1; transform: translateY(0); }
+        .final-photo { width: 100%; aspect-ratio: 3 / 4; background-image: url('молодые.jpg'); background-size: cover; background-position: center; background-color: #f5f0eb; }
 
-        .dresscode-main-title {
-            font-family: 'Lighthaus', 'Quicksand', sans-serif;
-            font-weight: 400;
-            font-size: 42px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #121212;
-            margin-bottom: 24px;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 2s cubic-bezier(0.25, 0.8, 0.4, 1);
-        }
-
-        .dresscode-main-title.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .dresscode-description {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 300;
-            line-height: 1.7;
-            color: #555;
-            max-width: 360px;
-            margin: 0 auto 30px;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 2s cubic-bezier(0.25, 0.8, 0.4, 1);
-        }
-
-        .dresscode-description.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ----- БЛОК ПОЖЕЛАНИЯ (анимация снизу вверх) ----- */
-        .wishes-screen {
-            background: #fff;
-            padding: 40px 20px 60px;
-            opacity: 0;
-            transform: translateY(60px);
-            transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1);
-            flex-shrink: 0;
-            border-top: 1px solid #f0f0f0;
-        }
-
-        .wishes-screen.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .wishes-container {
-            max-width: 450px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .wishes-title {
-            font-family: 'Lighthaus', 'Quicksand', sans-serif;
-            font-weight: 400;
-            font-size: 36px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #121212;
-            margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 2s cubic-bezier(0.25, 0.8, 0.4, 1);
-        }
-
-        .wishes-title.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .wishes-text {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
-            font-weight: 300;
-            line-height: 1.8;
-            color: #444;
-            max-width: 360px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 2s cubic-bezier(0.25, 0.8, 0.4, 1);
-        }
-
-        .wishes-text.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .divider-line {
-            width: 1px;
-            height: 60px;
-            background: #1a1a1a;
-            margin: 0 auto;
-            opacity: 0.4;
-        }
-
-        /* ----- ФИНАЛЬНЫЙ БЛОК (анимация снизу вверх) ----- */
-        .final-block {
-            background: #fff;
-            padding: 40px 20px 60px;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(60px);
-            transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1);
-            flex-shrink: 0;
-        }
-
-        .final-block.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .final-block .pre-closing {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 300;
-            letter-spacing: 1px;
-            color: #777;
-            margin-bottom: 30px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1.2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 1.2s cubic-bezier(0.25, 0.8, 0.4, 1);
-        }
-
-        .final-block.visible .pre-closing {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .final-names {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 35px;
-            gap: 0;
-        }
-
-        .final-names .name-item {
-            font-family: 'Lighthaus', 'Quicksand', sans-serif;
-            font-weight: 300;
-            font-size: 46px;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            line-height: 1.2;
-            color: #121212;
-            opacity: 0;
-            transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.4, 1);
-        }
-
-        .final-names .name-left {
-            transform: translateX(-60px);
-        }
-        .final-names .name-right {
-            transform: translateX(60px);
-        }
-
-        .final-block.visible .name-left {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .final-block.visible .name-right {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .final-names .ampersand-item {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 38px;
-            font-weight: 400;
-            color: #121212;
-            opacity: 0;
-            transition: opacity 0.8s ease 0.2s;
-            margin: 8px 0;
-        }
-
-        .final-block.visible .ampersand-item {
-            opacity: 1;
-        }
-
-        /* ФИНАЛЬНОЕ ФОТО — анимация снизу вверх при появлении */
-        .final-photo-wrapper {
-            max-width: 450px;
-            margin: 0 auto;
-            padding: 0 10px;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1.4s cubic-bezier(0.25, 0.8, 0.4, 1), transform 1.4s cubic-bezier(0.25, 0.8, 0.4, 1);
-        }
-
-        .final-block.visible .final-photo-wrapper {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .final-photo {
-            width: 100%;
-            aspect-ratio: 3 / 4;
-            background-image: url('молодые.jpg');
-            background-size: cover;
-            background-position: center;
-            background-color: #f5f0eb;
-        }
-
-        /* ----- RSVP ----- */
-        .rsvp-screen {
-            background: #ffffff;
-            padding: 60px 20px;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1);
-            flex-shrink: 0;
-        }
-
-        .rsvp-screen.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .rsvp-container {
-            max-width: 500px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 40px 30px;
-            box-shadow: none;
-        }
-
-        .rsvp-title {
-            font-family: 'Lighthaus', 'Quicksand', sans-serif;
-            font-size: 32px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #1a1a1a;
-            margin-bottom: 12px;
-            text-align: center;
-        }
-
-        .rsvp-subtitle {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 28px;
-            text-align: center;
-            color: #555;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #eee;
-            display: inline-block;
-            width: 100%;
-            padding-bottom: 15px;
-        }
-
-        .rsvp-deadline {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 300;
-            color: #777;
-            text-align: center;
-            margin-bottom: 30px;
-            letter-spacing: 0.5px;
-        }
-
+        .rsvp-screen { background: #ffffff; padding: 60px 20px; opacity: 0; transform: translateY(50px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); flex-shrink: 0; }
+        .rsvp-screen.visible { opacity: 1; transform: translateY(0); }
+        .rsvp-container { max-width: 500px; margin: 0 auto; background: #ffffff; padding: 40px 30px; box-shadow: none; }
+        .rsvp-title { font-family: 'Lighthaus', 'Quicksand', sans-serif; font-size: 32px; text-transform: uppercase; letter-spacing: 3px; color: #1a1a1a; margin-bottom: 12px; text-align: center; }
+        .rsvp-subtitle { font-family: 'Pinyon Script', cursive; font-size: 28px; text-align: center; color: #555; margin-bottom: 10px; border-bottom: 1px solid #eee; display: inline-block; width: 100%; padding-bottom: 15px; }
+        .rsvp-deadline { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; color: #777; text-align: center; margin-bottom: 30px; letter-spacing: 0.5px; }
         .form-group { margin-bottom: 25px; }
-        .form-group label {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            color: #1a1a1a;
-        }
-        .form-group input, 
-        .form-group select {
-            width: 100%;
-            padding: 12px 0;
-            border: none;
-            border-bottom: 1px solid #ddd;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            background: transparent;
-            transition: border 0.2s ease;
-            outline: none;
-            color: #1a1a1a;
-        }
-        .form-group input:focus, 
-        .form-group select:focus {
-            border-bottom-color: #1a1a1a;
-        }
-        .form-group input::placeholder {
-            color: #aaa;
-        }
-        .radio-group-vertical {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 8px;
-        }
-        .radio-group-vertical label {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 400;
-            text-transform: none;
-            font-size: 14px;
-            color: #1a1a1a;
-        }
-        .radio-group-vertical input {
-            width: auto;
-            margin: 0;
-            accent-color: #1a1a1a;
-        }
-        .checkbox-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 8px;
-        }
-        .checkbox-group label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 400;
-            text-transform: none;
-            font-size: 14px;
-            color: #1a1a1a;
-        }
-        .checkbox-group input {
-            width: auto;
-            margin: 0;
-            accent-color: #1a1a1a;
-        }
-        .submit-btn {
-            display: block;
-            width: 100%;
-            background: #1a1a1a;
-            color: white;
-            border: none;
-            padding: 14px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            margin-top: 30px;
-            transition: background 0.2s;
-        }
+        .form-group label { display: block; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; color: #1a1a1a; }
+        .form-group input, .form-group select { width: 100%; padding: 12px 0; border: none; border-bottom: 1px solid #ddd; font-family: 'Montserrat', sans-serif; font-size: 16px; background: transparent; transition: border 0.2s ease; outline: none; color: #1a1a1a; }
+        .form-group input:focus, .form-group select:focus { border-bottom-color: #1a1a1a; }
+        .form-group input::placeholder { color: #aaa; }
+        .radio-group-vertical { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+        .radio-group-vertical label { display: flex; align-items: center; gap: 10px; font-weight: 400; text-transform: none; font-size: 14px; color: #1a1a1a; }
+        .radio-group-vertical input { width: auto; margin: 0; accent-color: #1a1a1a; }
+        .checkbox-group { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+        .checkbox-group label { display: flex; align-items: center; gap: 8px; font-weight: 400; text-transform: none; font-size: 14px; color: #1a1a1a; }
+        .checkbox-group input { width: auto; margin: 0; accent-color: #1a1a1a; }
+        .submit-btn { display: block; width: 100%; background: #1a1a1a; color: white; border: none; padding: 14px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; margin-top: 30px; transition: background 0.2s; }
         .submit-btn:hover { background: #333; }
-        .hidden-message {
-            text-align: center;
-            margin-top: 20px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            color: #1a1a1a;
-            display: none;
-        }
+        .hidden-message { text-align: center; margin-top: 20px; font-family: 'Montserrat', sans-serif; font-size: 12px; color: #1a1a1a; display: none; }
 
-        /* ----- КОНТАКТЫ ----- */
-        .contacts-screen {
-            background: #ffffff;
-            padding: 60px 20px 80px;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1);
-            flex-shrink: 0;
-        }
-
-        .contacts-screen.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .contacts-container {
-            max-width: 450px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contacts-title {
-            font-family: 'Lighthaus', 'Quicksand', sans-serif;
-            font-size: 32px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-            font-weight: 400;
-        }
-
-        .contacts-subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 300;
-            letter-spacing: 1px;
-            color: #777;
-            margin-bottom: 50px;
-            text-transform: none;
-        }
-
-        .contacts-list {
-            display: flex;
-            flex-direction: column;
-            gap: 28px;
-            margin-bottom: 45px;
-        }
-
-        .contact-row {
-            display: flex;
-            justify-content: center;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 8px 20px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            letter-spacing: 0.3px;
-        }
-
-        .contact-role {
-            font-weight: 500;
-            color: #1a1a1a;
-            text-transform: uppercase;
-            font-size: 11px;
-            letter-spacing: 1.5px;
-        }
-
-        .contact-info {
-            font-weight: 300;
-            color: #333;
-        }
-
-        .contact-info a {
-            color: #333;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .contact-info a:hover {
-            color: #6B705C;
-        }
-
-        .contacts-divider {
-            width: 1px;
-            height: 50px;
-            background-color: #d0d0d0;
-            margin: 0 auto 35px;
-        }
-
-        .contacts-copyright {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            letter-spacing: 1.5px;
-            color: #aaa;
-            text-transform: uppercase;
-        }
+        .contacts-screen { background: #ffffff; padding: 60px 20px 80px; opacity: 0; transform: translateY(50px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); flex-shrink: 0; }
+        .contacts-screen.visible { opacity: 1; transform: translateY(0); }
+        .contacts-container { max-width: 450px; margin: 0 auto; text-align: center; }
+        .contacts-title { font-family: 'Lighthaus', 'Quicksand', sans-serif; font-size: 32px; text-transform: uppercase; letter-spacing: 3px; color: #1a1a1a; margin-bottom: 15px; font-weight: 400; }
+        .contacts-subtitle { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 1px; color: #777; margin-bottom: 50px; text-transform: none; }
+        .contacts-list { display: flex; flex-direction: column; gap: 28px; margin-bottom: 45px; }
+        .contact-row { display: flex; justify-content: center; align-items: baseline; flex-wrap: wrap; gap: 8px 20px; font-family: 'Montserrat', sans-serif; font-size: 14px; letter-spacing: 0.3px; }
+        .contact-role { font-weight: 500; color: #1a1a1a; text-transform: uppercase; font-size: 11px; letter-spacing: 1.5px; }
+        .contact-info { font-weight: 300; color: #333; }
+        .contact-info a { color: #333; text-decoration: none; transition: color 0.2s; }
+        .contact-info a:hover { color: #6B705C; }
+        .contacts-divider { width: 1px; height: 50px; background-color: #d0d0d0; margin: 0 auto 35px; }
+        .contacts-copyright { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 1.5px; color: #aaa; text-transform: uppercase; }
 
         /* ----- АДАПТИВНОСТЬ ----- */
         @media (max-width: 768px) {
@@ -1083,7 +359,7 @@
 </head>
 <body>
 
-    <!-- ПЕРВЫЙ ЭКРАН (ФИКСИРОВАННЫЙ) -->
+    <!-- ПЕРВЫЙ ЭКРАН -->
     <div class="first-screen" id="firstScreen">
         <div class="photo-bg" id="photoBg">
             <div class="photo-container" id="photoContainer"></div>
@@ -1168,14 +444,11 @@
         </div>
     </div>
 
-    <!-- БЛОК ПОЖЕЛАНИЯ -->
+    <!-- ПОЖЕЛАНИЯ -->
     <div class="wishes-screen" id="wishesScreen">
         <div class="wishes-container">
             <h2 class="wishes-title" id="wishesTitle">Пожелания</h2>
-            <p class="wishes-text" id="wishesText">
-                Будем очень признательны, если вы воздержитесь от криков «Горько».<br>
-                Ведь поцелуй — это знак выражения чувств, и он не может быть по заказу.
-            </p>
+            <p class="wishes-text" id="wishesText">Будем очень признательны, если вы воздержитесь от криков «Горько».<br>Ведь поцелуй — это знак выражения чувств, и он не может быть по заказу.</p>
         </div>
     </div>
 
@@ -1194,35 +467,35 @@
         </div>
     </div>
 
-    <!-- RSVP -->
+    <!-- RSVP С ПОДКЛЮЧЕННОЙ ФОРМОЙ FORMPREE -->
     <div class="rsvp-screen" id="rsvpScreen">
         <div class="rsvp-container">
             <h2 class="rsvp-title">Анкета гостя</h2>
-    
             <div class="rsvp-deadline">Подтвердите присутствие до 25.07.2026</div>
-            
-            <form id="guestForm">
+
+            <!-- ИЗМЕНЕНИЕ: form action и method для Formspree -->
+            <form id="guestForm" action="https://formspree.io/f/mojolprp" method="POST">
                 <div class="form-group">
                     <label>Ваше имя и фамилия</label>
-                    <input type="text" id="guestName" placeholder="Например, Анна Петрова" required>
+                    <input type="text" id="guestName" name="Имя и фамилия" placeholder="Например, Анна Петрова" required>
                 </div>
                 <div class="form-group">
                     <label>Будете ли Вы присутствовать?</label>
                     <div class="radio-group-vertical">
-                        <label><input type="radio" name="attendance" value="yes" required> Да, с радостью приду!</label>
-                        <label><input type="radio" name="attendance" value="no"> К сожалению, не смогу</label>
+                        <label><input type="radio" name="Присутствие" value="Да, с радостью приду!" required> Да, с радостью приду!</label>
+                        <label><input type="radio" name="Присутствие" value="К сожалению, не смогу"> К сожалению, не смогу</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Выберите напитки (можно несколько)</label>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" name="drink" value="вино"> Вино</label>
-                        <label><input type="checkbox" name="drink" value="шампанское"> Шампанское</label>
-                        <label><input type="checkbox" name="drink" value="водка"> Водка</label>
-                        <label><input type="checkbox" name="drink" value="коньяк"> Коньяк</label>
-                        <label><input type="checkbox" name="drink" value="виски"> Виски</label>
-                        <label><input type="checkbox" name="drink" value="коктейль"> Коктейль</label>
-                        <label><input type="checkbox" name="drink" value="безалкогольное"> Безалкогольные</label>
+                        <label><input type="checkbox" name="Напитки" value="вино"> Вино</label>
+                        <label><input type="checkbox" name="Напитки" value="шампанское"> Шампанское</label>
+                        <label><input type="checkbox" name="Напитки" value="водка"> Водка</label>
+                        <label><input type="checkbox" name="Напитки" value="коньяк"> Коньяк</label>
+                        <label><input type="checkbox" name="Напитки" value="виски"> Виски</label>
+                        <label><input type="checkbox" name="Напитки" value="коктейль"> Коктейль</label>
+                        <label><input type="checkbox" name="Напитки" value="безалкогольное"> Безалкогольные</label>
                     </div>
                 </div>
                 <button type="submit" class="submit-btn">Отправить ответ</button>
@@ -1236,7 +509,6 @@
         <div class="contacts-container">
             <h2 class="contacts-title">Контакты</h2>
             <div class="contacts-subtitle">остались вопросы?</div>
-            
             <div class="contacts-list">
                 <div class="contact-row">
                     <span class="contact-role">Егор</span>
@@ -1247,7 +519,6 @@
                     <span class="contact-info"><a href="tel:+375333834275">+375 (33) 383-42-75</a></span>
                 </div>
             </div>
-            
             <div class="contacts-divider"></div>
             <div class="contacts-copyright">Егор & Ангелина</div>
         </div>
@@ -1255,14 +526,12 @@
 
     <script>
         (function() {
-            // Первый экран — анимации
+            // Анимации появления
             const firstObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const photoContainer = document.getElementById('photoContainer');
-                        if (photoContainer) {
-                            setTimeout(() => photoContainer.classList.add('visible'), 100);
-                        }
+                        if (photoContainer) setTimeout(() => photoContainer.classList.add('visible'), 100);
                         setTimeout(() => document.getElementById('weddingScript')?.classList.add('visible'), 800);
                         setTimeout(() => document.getElementById('egorName')?.classList.add('visible'), 1400);
                         setTimeout(() => document.getElementById('ampersand')?.classList.add('visible'), 1750);
@@ -1271,13 +540,9 @@
                     }
                 });
             }, { threshold: 0.1 });
-            
             const firstScreen = document.getElementById('firstScreen');
-            if (firstScreen) {
-                firstObserver.observe(firstScreen);
-            }
+            if (firstScreen) firstObserver.observe(firstScreen);
 
-            // Второй экран
             const secondContainer = document.querySelector('.invitation-container');
             if (secondContainer) {
                 const secondObserver = new IntersectionObserver((entries) => {
@@ -1298,21 +563,14 @@
                 secondObserver.observe(secondContainer);
             }
 
-            // Локация
             const locSec = document.getElementById('locationSection');
             if (locSec) {
                 const locObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(e => { 
-                        if(e.isIntersecting) {
-                            locSec.classList.add('visible');
-                            locObserver.disconnect();
-                        }
-                    });
+                    entries.forEach(e => { if(e.isIntersecting) { locSec.classList.add('visible'); locObserver.disconnect(); } });
                 }, { threshold: 0.3 });
                 locObserver.observe(locSec);
             }
-            
-            // Тайминг
+
             const timeline = document.querySelector('.timeline-container');
             if (timeline) {
                 const timelineObserver = new IntersectionObserver((entries) => {
@@ -1330,19 +588,14 @@
                 timelineObserver.observe(timeline);
             }
 
-            // Дресс-код
             const dressScreen = document.getElementById('dresscodeScreen');
             if (dressScreen) {
                 const drObs = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             dressScreen.classList.add('visible');
-                            setTimeout(() => {
-                                document.getElementById('dresscodeMainTitle')?.classList.add('visible');
-                            }, 200);
-                            setTimeout(() => {
-                                document.getElementById('dresscodeDescription')?.classList.add('visible');
-                            }, 400);
+                            setTimeout(() => document.getElementById('dresscodeMainTitle')?.classList.add('visible'), 200);
+                            setTimeout(() => document.getElementById('dresscodeDescription')?.classList.add('visible'), 400);
                             drObs.disconnect();
                         }
                     });
@@ -1350,19 +603,14 @@
                 drObs.observe(dressScreen);
             }
 
-            // Блок Пожелания
             const wishesScreen = document.getElementById('wishesScreen');
             if (wishesScreen) {
                 const wishesObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             wishesScreen.classList.add('visible');
-                            setTimeout(() => {
-                                document.getElementById('wishesTitle')?.classList.add('visible');
-                            }, 200);
-                            setTimeout(() => {
-                                document.getElementById('wishesText')?.classList.add('visible');
-                            }, 400);
+                            setTimeout(() => document.getElementById('wishesTitle')?.classList.add('visible'), 200);
+                            setTimeout(() => document.getElementById('wishesText')?.classList.add('visible'), 400);
                             wishesObserver.disconnect();
                         }
                     });
@@ -1370,72 +618,58 @@
                 wishesObserver.observe(wishesScreen);
             }
 
-            // Финальный блок
             const finalBlock = document.getElementById('finalBlock');
             if (finalBlock) {
                 const fbObs = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            finalBlock.classList.add('visible');
-                            fbObs.disconnect();
-                        }
-                    });
+                    entries.forEach(entry => { if (entry.isIntersecting) { finalBlock.classList.add('visible'); fbObs.disconnect(); } });
                 }, { threshold: 0.2 });
                 fbObs.observe(finalBlock);
             }
 
-            // RSVP
             const rsvpScreen = document.getElementById('rsvpScreen');
             if (rsvpScreen) {
                 const rsvpObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            rsvpScreen.classList.add('visible');
-                            rsvpObserver.disconnect();
-                        }
-                    });
+                    entries.forEach(entry => { if (entry.isIntersecting) { rsvpScreen.classList.add('visible'); rsvpObserver.disconnect(); } });
                 }, { threshold: 0.2 });
                 rsvpObserver.observe(rsvpScreen);
             }
 
-            // Контакты
             const contactsScreen = document.getElementById('contactsScreen');
             if (contactsScreen) {
                 const contactsObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            contactsScreen.classList.add('visible');
-                            contactsObserver.disconnect();
-                        }
-                    });
+                    entries.forEach(entry => { if (entry.isIntersecting) { contactsScreen.classList.add('visible'); contactsObserver.disconnect(); } });
                 }, { threshold: 0.2 });
                 contactsObserver.observe(contactsScreen);
             }
-            
-            // Скролл
+
+            // Скролл вниз
             document.getElementById('scrollBtn')?.addEventListener('click', () => {
                 document.getElementById('secondScreen')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
 
-            // Форма
+            // Обработка формы: показываем сообщение, но отправку на Formspree не блокируем
             const form = document.getElementById('guestForm');
             const messageDiv = document.getElementById('formMessage');
             if (form) {
                 form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const name = document.getElementById('guestName').value.trim();
-                    if (!name) {
+                    // Проверяем имя (для UX)
+                    const nameInput = document.getElementById('guestName');
+                    if (nameInput && !nameInput.value.trim()) {
+                        e.preventDefault();
                         alert('Пожалуйста, укажите ваше имя');
                         return;
                     }
-                    messageDiv.style.display = 'block';
+                    // Показываем сообщение после отправки (но форма отправится на Formspree)
+                    // Используем setTimeout, чтобы дать форме отправиться
                     setTimeout(() => {
-                        messageDiv.style.opacity = '1';
-                    }, 10);
-                    setTimeout(() => {
-                        messageDiv.style.display = 'none';
-                        messageDiv.style.opacity = '0';
-                    }, 4000);
+                        messageDiv.style.display = 'block';
+                        setTimeout(() => { messageDiv.style.opacity = '1'; }, 10);
+                        setTimeout(() => {
+                            messageDiv.style.display = 'none';
+                            messageDiv.style.opacity = '0';
+                        }, 4000);
+                    }, 100);
+                    // Сама форма отправится на action, указанный в атрибуте
                 });
             }
         })();
