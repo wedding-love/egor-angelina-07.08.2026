@@ -282,7 +282,9 @@
         .wishes-title.visible { opacity: 1; transform: translateY(0); }
         .wishes-text { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 300; line-height: 1.8; color: #444; max-width: 360px; margin: 0 auto; opacity: 0; transform: translateY(40px); transition: opacity 2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 2s cubic-bezier(0.25, 0.8, 0.4, 1); }
         .wishes-text.visible { opacity: 1; transform: translateY(0); }
-        .divider-line { width: 1px; height: 60px; background: #1a1a1a; margin: 0 auto; opacity: 0.4; }
+
+        /* Разделитель перед анкетой */
+        .divider-line-before-rsvp { width: 1px; height: 60px; background: #1a1a1a; margin: 0 auto; opacity: 0.4; }
 
         /* RSVP (анкета) */
         .rsvp-screen { background: #ffffff; padding: 60px 20px; opacity: 0; transform: translateY(50px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); flex-shrink: 0; }
@@ -305,6 +307,9 @@
         .submit-btn { display: block; width: 100%; background: #1a1a1a; color: white; border: none; padding: 14px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; margin-top: 30px; transition: background 0.2s; }
         .submit-btn:hover { background: #333; }
         .hidden-message { text-align: center; margin-top: 20px; font-family: 'Montserrat', sans-serif; font-size: 12px; color: #1a1a1a; display: none; }
+
+        /* Разделитель перед финальным блоком */
+        .divider-line-before-final { width: 1px; height: 60px; background: #1a1a1a; margin: 0 auto; opacity: 0.4; }
 
         /* ФИНАЛЬНЫЙ БЛОК (с фото) */
         .final-block { background: #fff; padding: 40px 20px 60px; text-align: center; opacity: 0; transform: translateY(60px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); flex-shrink: 0; }
@@ -455,7 +460,8 @@
         </div>
     </div>
 
-    <div class="divider-line"></div>
+    <!-- РАЗДЕЛИТЕЛЬ ПЕРЕД АНКЕТОЙ -->
+    <div class="divider-line-before-rsvp"></div>
 
     <!-- RSVP (АНКЕТА) — ПЕРЕНЕСЕНА СЮДА, ПЕРЕД ФИНАЛЬНЫМ БЛОКОМ -->
     <div class="rsvp-screen" id="rsvpScreen">
@@ -492,6 +498,9 @@
             </form>
         </div>
     </div>
+
+    <!-- РАЗДЕЛИТЕЛЬ ПЕРЕД ФИНАЛЬНЫМ БЛОКОМ -->
+    <div class="divider-line-before-final"></div>
 
     <!-- ФИНАЛЬНЫЙ БЛОК С ФОТО -->
     <div class="final-block" id="finalBlock">
