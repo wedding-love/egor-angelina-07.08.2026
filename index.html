@@ -266,7 +266,7 @@
         .timeline-item .time { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; margin-bottom: 6px; }
         .timeline-item .timeline-desc { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 400; color: #333; max-width: 300px; margin: 0 auto; }
 
-        /* ----- ДРЕСС-КОД, ПОЖЕЛАНИЯ, ФИНАЛ, RSVP, КОНТАКТЫ (анимации и стили) ----- */
+        /* ----- ДРЕСС-КОД, ПОЖЕЛАНИЯ, RSVP (анимации и стили) ----- */
         .dresscode-screen { background: #fff; padding: 40px 16px 60px; opacity: 0; transform: translateY(60px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); flex-shrink: 0; }
         .dresscode-screen.visible { opacity: 1; transform: translateY(0); }
         .dresscode-container { width: 100%; max-width: 450px; margin: 0 auto; text-align: center; }
@@ -284,22 +284,7 @@
         .wishes-text.visible { opacity: 1; transform: translateY(0); }
         .divider-line { width: 1px; height: 60px; background: #1a1a1a; margin: 0 auto; opacity: 0.4; }
 
-        .final-block { background: #fff; padding: 40px 20px 60px; text-align: center; opacity: 0; transform: translateY(60px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); flex-shrink: 0; }
-        .final-block.visible { opacity: 1; transform: translateY(0); }
-        .final-block .pre-closing { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 1px; color: #777; margin-bottom: 30px; opacity: 0; transform: translateY(30px); transition: opacity 1.2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 1.2s cubic-bezier(0.25, 0.8, 0.4, 1); }
-        .final-block.visible .pre-closing { opacity: 1; transform: translateY(0); }
-        .final-names { display: flex; flex-direction: column; align-items: center; margin-bottom: 35px; gap: 0; }
-        .final-names .name-item { font-family: 'Lighthaus', 'Quicksand', sans-serif; font-weight: 300; font-size: 46px; text-transform: uppercase; letter-spacing: 5px; line-height: 1.2; color: #121212; opacity: 0; transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.4, 1); }
-        .final-names .name-left { transform: translateX(-60px); }
-        .final-names .name-right { transform: translateX(60px); }
-        .final-block.visible .name-left { opacity: 1; transform: translateX(0); }
-        .final-block.visible .name-right { opacity: 1; transform: translateX(0); }
-        .final-names .ampersand-item { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 38px; font-weight: 400; color: #121212; opacity: 0; transition: opacity 0.8s ease 0.2s; margin: 8px 0; }
-        .final-block.visible .ampersand-item { opacity: 1; }
-        .final-photo-wrapper { max-width: 450px; margin: 0 auto; padding: 0 10px; opacity: 0; transform: translateY(50px); transition: opacity 1.4s cubic-bezier(0.25, 0.8, 0.4, 1), transform 1.4s cubic-bezier(0.25, 0.8, 0.4, 1); }
-        .final-block.visible .final-photo-wrapper { opacity: 1; transform: translateY(0); }
-        .final-photo { width: 100%; aspect-ratio: 3 / 4; background-image: url('молодые.jpg'); background-size: cover; background-position: center; background-color: #f5f0eb; }
-
+        /* RSVP (анкета) */
         .rsvp-screen { background: #ffffff; padding: 60px 20px; opacity: 0; transform: translateY(50px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); flex-shrink: 0; }
         .rsvp-screen.visible { opacity: 1; transform: translateY(0); }
         .rsvp-container { max-width: 500px; margin: 0 auto; background: #ffffff; padding: 40px 30px; box-shadow: none; }
@@ -321,6 +306,24 @@
         .submit-btn:hover { background: #333; }
         .hidden-message { text-align: center; margin-top: 20px; font-family: 'Montserrat', sans-serif; font-size: 12px; color: #1a1a1a; display: none; }
 
+        /* ФИНАЛЬНЫЙ БЛОК (с фото) */
+        .final-block { background: #fff; padding: 40px 20px 60px; text-align: center; opacity: 0; transform: translateY(60px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); flex-shrink: 0; }
+        .final-block.visible { opacity: 1; transform: translateY(0); }
+        .final-block .pre-closing { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 1px; color: #777; margin-bottom: 30px; opacity: 0; transform: translateY(30px); transition: opacity 1.2s cubic-bezier(0.25, 0.8, 0.4, 1), transform 1.2s cubic-bezier(0.25, 0.8, 0.4, 1); }
+        .final-block.visible .pre-closing { opacity: 1; transform: translateY(0); }
+        .final-names { display: flex; flex-direction: column; align-items: center; margin-bottom: 35px; gap: 0; }
+        .final-names .name-item { font-family: 'Lighthaus', 'Quicksand', sans-serif; font-weight: 300; font-size: 46px; text-transform: uppercase; letter-spacing: 5px; line-height: 1.2; color: #121212; opacity: 0; transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.4, 1); }
+        .final-names .name-left { transform: translateX(-60px); }
+        .final-names .name-right { transform: translateX(60px); }
+        .final-block.visible .name-left { opacity: 1; transform: translateX(0); }
+        .final-block.visible .name-right { opacity: 1; transform: translateX(0); }
+        .final-names .ampersand-item { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 38px; font-weight: 400; color: #121212; opacity: 0; transition: opacity 0.8s ease 0.2s; margin: 8px 0; }
+        .final-block.visible .ampersand-item { opacity: 1; }
+        .final-photo-wrapper { max-width: 450px; margin: 0 auto; padding: 0 10px; opacity: 0; transform: translateY(50px); transition: opacity 1.4s cubic-bezier(0.25, 0.8, 0.4, 1), transform 1.4s cubic-bezier(0.25, 0.8, 0.4, 1); }
+        .final-block.visible .final-photo-wrapper { opacity: 1; transform: translateY(0); }
+        .final-photo { width: 100%; aspect-ratio: 3 / 4; background-image: url('молодые.jpg'); background-size: cover; background-position: center; background-color: #f5f0eb; }
+
+        /* КОНТАКТЫ */
         .contacts-screen { background: #ffffff; padding: 60px 20px 80px; opacity: 0; transform: translateY(50px); transition: opacity 0.9s cubic-bezier(0.25, 0.8, 0.4, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.4, 1); flex-shrink: 0; }
         .contacts-screen.visible { opacity: 1; transform: translateY(0); }
         .contacts-container { max-width: 450px; margin: 0 auto; text-align: center; }
@@ -454,20 +457,7 @@
 
     <div class="divider-line"></div>
 
-    <!-- ФИНАЛЬНЫЙ БЛОК -->
-    <div class="final-block" id="finalBlock">
-        <div class="pre-closing">До скорой встречи!<br>С любовью</div>
-        <div class="final-names">
-            <span class="name-item name-left" id="finalAngelina">Ангелина</span>
-            <span class="ampersand-item">&</span>
-            <span class="name-item name-right" id="finalEgor">Егор</span>
-        </div>
-        <div class="final-photo-wrapper">
-            <div class="final-photo"></div>
-        </div>
-    </div>
-
-    <!-- RSVP С ПОДКЛЮЧЕННОЙ ФОРМОЙ FORMPREE -->
+    <!-- RSVP (АНКЕТА) — ПЕРЕНЕСЕНА СЮДА, ПЕРЕД ФИНАЛЬНЫМ БЛОКОМ -->
     <div class="rsvp-screen" id="rsvpScreen">
         <div class="rsvp-container">
             <h2 class="rsvp-title">Анкета гостя</h2>
@@ -500,6 +490,19 @@
                 <button type="submit" class="submit-btn">Отправить ответ</button>
                 <div id="formMessage" class="hidden-message">Спасибо! Ждём вас на нашей свадьбе</div>
             </form>
+        </div>
+    </div>
+
+    <!-- ФИНАЛЬНЫЙ БЛОК С ФОТО -->
+    <div class="final-block" id="finalBlock">
+        <div class="pre-closing">До скорой встречи!<br>С любовью</div>
+        <div class="final-names">
+            <span class="name-item name-left" id="finalAngelina">Ангелина</span>
+            <span class="ampersand-item">&</span>
+            <span class="name-item name-right" id="finalEgor">Егор</span>
+        </div>
+        <div class="final-photo-wrapper">
+            <div class="final-photo"></div>
         </div>
     </div>
 
@@ -617,20 +620,20 @@
                 wishesObserver.observe(wishesScreen);
             }
 
-            const finalBlock = document.getElementById('finalBlock');
-            if (finalBlock) {
-                const fbObs = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => { if (entry.isIntersecting) { finalBlock.classList.add('visible'); fbObs.disconnect(); } });
-                }, { threshold: 0.2 });
-                fbObs.observe(finalBlock);
-            }
-
             const rsvpScreen = document.getElementById('rsvpScreen');
             if (rsvpScreen) {
                 const rsvpObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => { if (entry.isIntersecting) { rsvpScreen.classList.add('visible'); rsvpObserver.disconnect(); } });
                 }, { threshold: 0.2 });
                 rsvpObserver.observe(rsvpScreen);
+            }
+
+            const finalBlock = document.getElementById('finalBlock');
+            if (finalBlock) {
+                const fbObs = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => { if (entry.isIntersecting) { finalBlock.classList.add('visible'); fbObs.disconnect(); } });
+                }, { threshold: 0.2 });
+                fbObs.observe(finalBlock);
             }
 
             const contactsScreen = document.getElementById('contactsScreen');
